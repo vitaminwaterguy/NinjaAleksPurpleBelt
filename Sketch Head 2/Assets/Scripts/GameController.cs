@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [Header("grodon is so annoying")]
+    public GameObject platform;
+    float yPos = 0;
+
+    [Header("Game Over UI Canvas Object")]
+    public GameObject gameOverCanvas;
+
+  
+
+    public static void GameOver() {
+        instance.gameOverCanvas.SetActive(true);
+    }
     public static void MovePlatformToTop(GameObject platform) {
         float xPosition = Random.Range(-3f, 3f);
         platform.transform.position = new Vector3(xPosition, instance.yPos, 0);
